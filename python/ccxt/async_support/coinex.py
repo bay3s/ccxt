@@ -4366,7 +4366,7 @@ class coinex(Exchange):
         code = self.safe_string(response, 'code')
         data = self.safe_value(response, 'data')
         message = self.safe_string(response, 'message')
-        if (code != '0') or ((message != 'Success') and (message != 'Succeeded') and (message != 'Ok' or message != 'OK') and not data):
+        if (code != '0') or ((message != 'Success') and (message != 'Succeeded') and (message != 'Ok') and (message != 'OK') and not data):
             responseCodes = {
                 # https://github.com/coinexcom/coinex_exchange_api/wiki/013error_code
                 '23': PermissionDenied,  # IP Prohibited
